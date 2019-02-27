@@ -76,10 +76,10 @@ Hero.prototype.counterSpell = function() {
   return `Using lighting fast reflexes ${this.name} deflects the attack!`;
 };
 Hero.prototype.healingSpell = function() {
-  return `Summoning the Spirit of Uru ${this.name} heals himself and those around him for ${this.healthPoints}!`;
+  return `Summoning the Spirit of Uru ${this.name} heals herself and those around him for ${this.healthPoints} health points!`;
 };
-Hero.prototype.misstep = function() {
-  return `Our Hero ${this.name} tripped over his foot and was ${this.destroy}!`;
+Hero.prototype.missStep = function() {
+  return `Our Hero ${this.name} tripped over her own foot and fell of the edge and ${whiteWizard.destroy()}`;
 };
 
 
@@ -88,18 +88,18 @@ function Villian(evil) {
   Humanoid.call(this, evil);
   };
 
-Villian.prototype = Object.create(Humanoid.prototype);
+Villian.prototype = Object.create(Hero.prototype);
 
 Villian.prototype.fireBlast = function() {
   return `${this.name} lets loose a blast of fire!`;
 };
 
 Villian.prototype.summonDemon = function() {
-  return `Using his ${this.strongAttack}, ${this.name} brings for a Demon to wreak havoc on the battlefield!`;
+  return `Using the energy of the black moon, ${this.name} brings forth a Demon to wreak havoc on the battlefield!`;
 };
 
 Villian.prototype.sliverOfHope = function() {
-  return `${this.name} realizes he is bringing about the destruction of life and takes his own life ${this.destroy}!`;
+  return `${this.name} realizes he is bringing about the destruction of life itself decides to take his own life! ${blackWizard.destroy()}`;
 };
 
 // Test you work by un-commenting these 3 objects and the list of console logs below:
@@ -211,6 +211,14 @@ Villian.prototype.sliverOfHope = function() {
   console.log(blackWizard.fireBlast());
 
   console.log(whiteWizard.counterSpell());
+
+  console.log(blackWizard.summonDemon());
+
+  console.log(whiteWizard.healingSpell());
+
+  console.log(blackWizard.sliverOfHope());
+
+  console.log(whiteWizard.missStep());
   // missStep healingSpell counterSpell
   // console.log(blackWizard.destroy());
   // sliverOfHope summonDemon fireBlast
